@@ -1,0 +1,53 @@
+<html>
+<head>
+    <style>
+        .btn{
+            display:block;
+            margin: 20px;
+            padding: 20px 40px;
+            text-align: center;
+            border: 1px solid #000;
+            background: #ccc;
+            text-decoration: none;
+            font-size: 50px;
+            line-height: 3;
+            color: #000;
+        }
+        .btn.led1 {
+            background: #0f0;    
+        }
+        .btn.led2 {
+            background: #0f0;
+        }
+        .btn.led3 {
+            background: #0f0;
+        }
+        </style>
+    </head>
+    <body style="font_family:Verdana:color:#aaaaaa;">
+        <div style="background-color:#e5e5e5;padding:20px;text-align:center;">
+          <h1>Covibot app</h1>
+        </div>
+        <h1>Desinfeccion UV</h1>
+        {% if led1 == 0 %}
+            <a class="btn" href="/4/1">Activar</a>
+        {% else %}
+            <a class="btn led1" href="/4/0">Desactivar</a>
+        {% endif %}
+        <h1>Desinfección por aspersión</h1>
+        {% if led2 == 0 %}
+            <a class="btn" href="/17/1">Activar</a>
+        {% else %}
+            <a class="btn led2" href="/17/0">Desactivar</a>
+        {% endif %}
+        <div style="background-color:#e5e5e5;padding:20px;text-align:center;">
+          <h1>Escuela Colombiana de Ingenieria Julio Garavito</h1>
+        </div>
+        {% if off == 0 %}
+            <a class="btn " href="/off/off">Apagar</a>
+        {% else %}
+            <a class="btn led3" href ="/on/on"> Apagando</a>
+        {% endif %}        
+</body>
+</html>
+
